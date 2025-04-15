@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="./Signup_Index.css">
+    <script defer src="./Signup.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="Parent">
+        <div id="container">
+            <div class="Login_Card">
+                <h3 id="Login_txt">Registration Form</h3>
+                <form id="signupForm">
+                    <!-- <p>Username</p> -->
+                    <input type="text" id="username" class="input" placeholder="Username" required>
+                    <br><br>
+                    <!-- <p>Email</p> -->
+                    <input type="text" id="email" class="input" placeholder="E-mail" required>
+                    <br><br>
+                    <div class="Password_Container">
+                        <!-- <p>Password</p> -->
+                        <input type="password" id="password" name="text" class="input" placeholder="Enter your password!">
+                        <br><br>
+                         <!-- <span class="Toggle_Password" onclick="togglePassword()"></span>  -->
+                         <!-- <p>Confirm password</p> -->
+                         <input type="password" id="confirmPassword" class="input" placeholder="Confirm Password" required>
+                        <!-- <span class="Toggle_Password" onclick="togglePassword()"></span>  -->
+                    </div>
+                    <br><br>
+                    <div class="Button">
+                         <button class="button" type="submit" id="Signup_submit_btn">   <!-- onclick="adduser_credentials()" -->
+                            <div class="button-outer">
+                                <div class="button-inner">
+                                    <span>Submit</span>
+                                </div>
+                            </div>
+                        </button>
+                        <!-- <button id="Sign_up_btn">Sign Up</button> -->
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</body>
+
+</html>

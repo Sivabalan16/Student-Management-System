@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="./choose_index.css">
+    <script defer src="./Choose.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="parent">
+        <div id="header">
+            <h1>Student Management System</h1>
+        </div>
+        <div id="navbar">
+            <div id="add_btn">
+                <button id="ADD">Add Student</button>
+            </div>
+            <div id="attendance_btn">
+                <button id="ATTENDANCE">Attendance</button>
+            </div>
+            <!-- <div><p>VANAKKAM</p></div> -->
+            <div id="markSheet_btn">
+                <button id="MARKSHEET">Marksheet</button>
+            </div>
+            <div id="logout_btn">
+                <button id="LOGOUT">Logout</button>
+            </div>
+        </div>
+        <div class="container">
+            <div id="studentform-section" style="display: none;" class="Studentform_wrapper">
+                <div id="Student_form">
+                    <form id="student-form">
+                        <div id="add_inputs">
+                            <div class="Containers">
+                                <input id="studentName" type="text" name="text" class="input">
+                                <label class="label">Student Name</label>
+                            </div>
+                            <br><br>
+                            <div class="Containers">
+                                <input id="registerNumber" required="" type="text" name="text" class="input">
+                                <label class="label">Register Number</label>
+                            </div>
+                            <br><br>
+                            <div class="Containers">
+                                <input id="studentMail" required="" type="email" name="text" class="input">
+                                <label class="label">E-Mail</label>
+                            </div>
+                            <br><br>
+                            <div class="Containers">
+                                <input id="studentNumber" required pattern="[0-9]{10}" maxlength="10" type="text" name="text" class="input">
+                                <label class="label">Phone Number</label>
+                            </div>
+                            <br>
+                            <div id="add_student_btn">
+                                <button id="add_stud_DB" type="submit"> 
+                                    Add
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div id="table-container"  style="display: none;">   <!-- style="display: none;" -->
+                    <table border="1" id="user-table">
+                        <thead>
+                            <tr class="hidden">
+                                <th>Register Number</th>
+                                <th>Student Name</th>
+                                <th>E-Mail</th>
+                                <th>Phone Number</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody id="userTableBody"></tbody>
+                    </table>
+                </div>
+            </div>
+            <div id="students-attendance">
+                <div id="Attendance-container"  style="display: none;">   <!-- style="display: none;" -->
+                    <div id="separator">
+                        <div>
+                            <div id="attendanceSaveBtn">
+                                <button id="submitAttendanceBtn"><p>Save!</p></button>
+                            </div>
+                            <table border="1" id="attendance-table">
+                                <thead>
+                                    <tr class="hidden">
+                                        <th>Register Number</th>
+                                        <th>Student Name</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+                                <div class="radio-buttons">
+                                    <tbody id="attendanceTableBody"></tbody>
+                                </div>
+                            </table>
+                            <div>
+                                <table id="countTable" style="display: none;">
+                                    <tr>
+                                        <th>Total No.of Students</th>
+                                        <th>No.of Presents</th>
+                                        <th>No.of Absenties</th>
+                                    </tr>
+                                    <tr>
+                                        <td id="studentsCounts"></td>
+                                        <td id="presentCounts"></td>
+                                        <td id="absentCounts"></td>
+                                    </tr>
+                                </table>
+                                
+                            </div>
+                    </div>
+                </div>
+            </div>
+            <div id="Marksheet_form" style="display: none;">
+                <div id="marksheet_container">
+                    <button id="dropdown-btn">Select student</button>
+                    <div id="dropdown" class="dropdown"></div>
+                </div>
+                <div id="updateMarkTable">
+                    <div id="marksheet-container">
+                        <table id="marksheet-table">
+                            <tbody id="UpdateMark"></tbody>
+                        </table>
+                        <button id="save-btn" class="saveMarks-btn">Save Marks</button>
+                    </div>
+                    <div id="student-marks-display"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

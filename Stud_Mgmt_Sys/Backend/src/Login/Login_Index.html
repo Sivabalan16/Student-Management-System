@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="./Login_Index.css">
+    <script defer src="./Login.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="Parent">
+        <div id="Header">
+            <h1>Student Management System</h1>
+        </div>
+        <div id="container">
+            <div class="Login_Card">
+                <h3 id="Login_txt" style="font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif">Login Form</h3>
+                <form id="loginform">
+                    <input type="text" id="login_username" class="input" placeholder="Username" required>
+                    <br><br>
+                    <div class="Password_Container">
+                        <input type="password" id="login_password" class="input" placeholder="Enter your password!">
+                    </div>
+                    <div class="Button">
+                        <button class="button">
+                            <div class="button-outer">
+                                <div class="button-inner">
+                                    <span>Login</span>
+                                </div>
+                            </div>
+                        </button>
+                        <button class="button" type="submit" id="go_to_signup">
+                            <div class="button-outer">
+                                <div class="button-inner">
+                                    <span>Sign up</span>
+                                </div>
+                            </div>
+                        </button>
+                        <!-- <button id="Sign_up_btn">Sign Up</button> -->
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

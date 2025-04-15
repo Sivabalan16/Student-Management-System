@@ -1,0 +1,836 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+.input {
+    width: 100%;
+    /* Use full container width */
+}
+
+
+/* Background Styling */
+body {
+    background: url('./assets/choose-background.jpg') no-repeat center center/cover;
+    /* height: 100vh; */
+    /* display: flex; */
+    /* align-items: center; */
+    justify-content: center;
+    transition: background 0.5s ease-in-out;
+    background-size: cover;
+    background-attachment: fixed;
+    image-rendering: crisp-edges;
+    /* margin-right: 40px; */
+}
+
+#header {
+    /* background-color: rgba(50, 209, 50, 0.719); */
+    align-items: center;
+    margin-left: 33%;
+    color: rgba(68, 218, 38, 0.904);
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    margin-top: 10px;
+}
+
+#navbar {
+    display: flex;
+    /* background-color: green; */
+    padding: 10px;
+    margin-top: 30px;
+}
+
+#add_btn {
+    margin-left: 5%;
+}
+
+#attendance_btn {
+    margin-left: 16%;
+}
+
+#markSheet_btn {
+    margin-left: 25%;
+}
+
+#logout_btn {
+    margin-left: 15%;
+}
+
+/* ******************************************Navbar***************************************************** */
+#ADD,
+#ATTENDANCE,
+#MARKSHEET,
+#LOGOUT {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 500;
+    padding: 12px 15px;
+    border-radius: 50px;
+    cursor: pointer;
+    border: 0;
+    background-color: rgb(81, 214, 103);
+    box-shadow: rgb(0 0 0 / 5%) 0 0 8px;
+    letter-spacing: 0.7px;
+    /* text-transform: uppercase; */
+    font-size: 15px;
+    transition: all 0.5s ease;
+}
+
+#ADD:hover,
+#ATTENDANCE:hover,
+#MARKSHEET:hover,
+#LOGOUT:hover {
+    /* letter-spacing: 3px; */
+    background-color: hsla(128, 74%, 49%, 0.863);
+    color: hsl(0, 0%, 0%);
+    box-shadow: rgba(164, 238, 26, 0.644) 0px 7px 29px 0px;
+}
+
+#ADD:active,
+#ATTENDANCE:active,
+#MARKSHEET:active,
+#LOGOUT:active {
+    /* letter-spacing: 3px; */
+    background-color: hsl(143, 80%, 48%);
+    color: hsl(0, 0%, 0%);
+    box-shadow: rgb(93 24 220) 0px 0px 0px 0px;
+    transform: translateY(10px);
+    transition: 100ms;
+}
+
+
+/* ******************************Add student Form details**************************************** */
+
+.Containers {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    position: relative;
+    color: rgb(250, 250, 250);
+    font-weight: 500;
+    font-family: Verdana, Geneva, Tahoma, sans-serif
+}
+
+.Containers .label {
+    font-size: 15px;
+    padding-left: 10px;
+    position: absolute;
+    top: 13px;
+    transition: 0.3s;
+    pointer-events: none;
+}
+
+.input {
+    width: 200px;
+    height: 45px;
+    border: none;
+    outline: none;
+    padding: 0px 7px;
+    border-radius: 6px;
+    color: #fff;
+    font-size: 15px;
+    background-color: transparent;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 1),
+        -1px -1px 6px rgba(255, 255, 255, 0.4);
+}
+
+.input:focus {
+    border: 2px solid transparent;
+    color: #fff;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 1),
+        -1px -1px 6px rgba(255, 255, 255, 0.4),
+        inset 3px 3px 10px rgba(0, 0, 0, 1),
+        inset -1px -1px 6px rgba(255, 255, 255, 0.4);
+}
+
+.Containers .input:valid~.label,
+.Containers .input:focus~.label {
+    transition: 0.3s;
+    padding-left: 2px;
+    transform: translateY(-35px);
+}
+
+.Containers .input:valid,
+.Containers .input:focus {
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 1),
+        -1px -1px 6px rgba(255, 255, 255, 0.4),
+        inset 3px 3px 10px rgba(0, 0, 0, 1),
+        inset -1px -1px 6px rgba(255, 255, 255, 0.4);
+}
+
+
+/* ************************************Add student button*********************************/
+
+
+#add_stud_DB {
+    align-items: center;
+    height: 2em;
+    width: 5em;
+    border: none;
+    border-radius: 10em;
+    background: #2664a1a4;
+    font-size: 17px;
+    color: #000000;
+    font-family: inherit;
+    font-weight: 500;
+}
+
+#add_stud_DB:hover {
+    animation: shake3856 0.3s linear infinite both;
+}
+
+@keyframes shake3856 {
+    0% {
+        -webkit-transform: translate(0);
+        transform: translate(0);
+    }
+
+    20% {
+        -webkit-transform: translate(-2px, 2px);
+        transform: translate(-2px, 2px);
+    }
+
+    40% {
+        -webkit-transform: translate(-2px, -2px);
+        transform: translate(-2px, -2px);
+    }
+
+    60% {
+        -webkit-transform: translate(2px, 2px);
+        transform: translate(2px, 2px);
+    }
+
+    80% {
+        -webkit-transform: translate(2px, -2px);
+        transform: translate(2px, -2px);
+    }
+
+    100% {
+        -webkit-transform: translate(0);
+        transform: translate(0);
+    }
+}
+
+
+#student-form {
+    /* background: rgb(226, 7, 7); */
+    background-color: rgba(69, 71, 68, 0.521);
+    box-shadow: 4px 5px 10px rgba(0, 0, 0, 2.0);
+    /* padding: 90px; */
+    /* padding-left: 90px; */
+    /* width: 25%; */
+    /* max-width: 400px;
+    min-width: 280px;
+    height: 30%; */
+    border-radius: 13px;
+    text-align: center;
+    /* margin-left: 7%; */
+    margin-top: 8%;
+    /* margin-bottom: 5%; */
+}
+
+#add_inputs {
+    padding: 40px;
+    padding-left: 70px;
+}
+
+#add_student_btn {
+    margin-right: 42px;
+}
+
+.delete-btn,
+.edit-btn {
+    width: 10px;
+    /* Or a specific width if needed */
+    height: 10px;
+    /* Or a specific height if needed */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* position: relative; */
+    /* display: inline-block; */
+    cursor: pointer;
+    outline: none;
+    border: 0;
+    /* vertical-align: middle; */
+    /* text-decoration: none; */
+    font-family: inherit;
+    font-size: 14px;
+}
+
+button.delete-btn,
+button.edit-btn {
+    font-weight: 600;
+    color: #382b22;
+    /* text-transform: uppercase; */
+    padding: 0.9em 2em;
+    background: #fff0f0;
+    border: 2px solid #b18597;
+    border-radius: 0.75em;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    -webkit-transition: background 150ms cubic-bezier(0, 0, 0.58, 1), -webkit-transform 150ms cubic-bezier(0, 0, 0.58, 1);
+    transition: transform 150ms cubic-bezier(0, 0, 0.58, 1), background 150ms cubic-bezier(0, 0, 0.58, 1), -webkit-transform 150ms cubic-bezier(0, 0, 0.58, 1);
+}
+
+button.delete-btn::before,
+button.edit-btn::before {
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #f9c4d2;
+    border-radius: inherit;
+    -webkit-box-shadow: 0 0 0 2px #b18597, 0 0.625em 0 0 #ffe3e2;
+    box-shadow: 0 0 0 2px #b18597, 0 0.625em 0 0 #ffe3e2;
+    -webkit-transform: translate3d(0, 0.75em, -1em);
+    transform: translate3d(0, 0.75em, -1em);
+    transition: transform 150ms cubic-bezier(0, 0, 0.58, 1), box-shadow 150ms cubic-bezier(0, 0, 0.58, 1), -webkit-transform 150ms cubic-bezier(0, 0, 0.58, 1), -webkit-box-shadow 150ms cubic-bezier(0, 0, 0.58, 1);
+}
+
+button.delete-btn:hover,
+button.edit-btn:hover {
+    background: #ffe9e9;
+    -webkit-transform: translate(0, 0.25em);
+    transform: translate(0, 0.25em);
+}
+
+button.delete-btn:hover::before,
+button.edit-btn:hover::before {
+    -webkit-box-shadow: 0 0 0 2px #b18597, 0 0.5em 0 0 #ffe3e2;
+    box-shadow: 0 0 0 2px #b18597, 0 0.5em 0 0 #ffe3e2;
+    -webkit-transform: translate3d(0, 0.5em, -1em);
+    transform: translate3d(0, 0.5em, -1em);
+}
+
+button.delete-btn:active,
+button.edit-btn:active {
+    background: #ffe9e9;
+    -webkit-transform: translate(0em, 0.75em);
+    transform: translate(0em, 0.75em);
+}
+
+button.delete-btn:active::before,
+button.edit-btn:active::before {
+    -webkit-box-shadow: 0 0 0 2px #b18597, 0 0 #ffe3e2;
+    box-shadow: 0 0 0 2px #b18597, 0 0 #ffe3e2;
+    -webkit-transform: translate3d(0, 0, -1em);
+    transform: translate3d(0, 0, -1em);
+}
+
+/***************************************TABLE css ********************************************/
+/* #studentform-section {
+    display: flex; 
+    width: 20%;
+
+} */
+
+.Studentform_wrapper {
+    /* display: flex; */
+    /* justify-content: space-between; */
+    align-items: flex-start;
+    /* gap: 20px; */
+}
+
+table {
+    background-color: #6aac35bb;
+    border-collapse: collapse;
+    overflow: hidden;
+    table-layout: fixed;
+
+}
+
+th,
+td {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    border: 3px solid rgba(197, 117, 42, 0.822);
+    /* padding: 3px; */
+    /* max-width: 100px; */
+    /* padding-right: 40px; */
+    /* overflow: auto; */
+    align-items: center;
+    text-align: center;
+    /* height: 5%; */
+    /* box-shadow: rgb(0 0 0 / 5%) 0 0 8px; */
+}
+
+#table-container {
+    padding: 32px;
+    margin-right: 50px;
+    margin-left: 100px;
+    /* width: 60%; */
+}
+
+/***************************************Radio button css********************************************/
+#Attendance-container {
+    margin-top: 3%;
+    margin-left: 10%;
+}
+
+.radio-buttons {
+    display: flex;
+    flex-direction: column;
+    color: white;
+}
+
+.radio-button {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.radio-button input[type="radio"] {
+    display: none;
+}
+
+.radio-circle {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 2px solid #aaa;
+    position: relative;
+    margin-right: 10px;
+}
+
+.radio-circle::before {
+    content: "";
+    display: block;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #ddd;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    transition: all 0.2s ease-in-out;
+}
+
+.radio-button input[type="radio"]:checked+.radio-circle::before {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.radio-button:nth-of-type(1) input[type="radio"]:checked+.radio-circle::before {
+    background-color: #ff6600;
+}
+
+.radio-button:nth-of-type(2) input[type="radio"]:checked+.radio-circle::before {
+    background-color: #ffffff;
+}
+
+.radio-button:nth-of-type(3) input[type="radio"]:checked+.radio-circle::before {
+    background-color: #26be00;
+}
+
+.radio-label {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.radio-button:hover .radio-circle {
+    border-color: #555;
+}
+
+.radio-button:hover input[type="radio"]:checked+.radio-circle::before {
+    background-color: #555;
+}
+
+#countTable {
+    margin-left: 368px;
+    margin-top: -8%;
+    /* background-color: #000000; */
+    overflow: hidden;
+    width: 30%;
+}
+
+#separator {
+    display: flex;
+}
+
+#attendance-table {
+    width: 30%;
+}
+
+#submitAttendanceBtn {
+    border: none;
+    width: 90px;
+    height: 25px;
+    color: #fff;
+    z-index: 1;
+    display: flex;
+    background: #000;
+    position: relative;
+    cursor: pointer;
+}
+
+#submitAttendanceBtn p {
+    margin: 0 auto;
+    align-self: center;
+    font-size: 17px;
+    font-weight: bold;
+    text-align: center;
+}
+
+#submitAttendanceBtn::after {
+    position: absolute;
+    content: "";
+    width: 100%;
+    z-index: -1;
+    height: 10%;
+    bottom: 0;
+    clip-path: polygon(0% 74%,
+            4% 75%,
+            8% 76%,
+            11% 77%,
+            15% 78%,
+            20% 78%,
+            25% 77%,
+            32% 77%,
+            37% 75%,
+            40% 74%,
+            43% 74%,
+            46% 73%,
+            52% 72%,
+            57% 72%,
+            65% 74%,
+            66% 75%,
+            71% 78%,
+            75% 82%,
+            81% 86%,
+            83% 88%,
+            88% 91%,
+            90% 94%,
+            94% 96%,
+            98% 98%,
+            100% 100%,
+            82% 100%,
+            0 100%);
+    background: #8792eb;
+    transition: 0.2s ease;
+}
+
+#submitAttendanceBtn::before {
+    position: absolute;
+    content: "";
+    /*   bottom: 80%; */
+    transform: rotate(180deg);
+    width: 100%;
+    height: 10%;
+    transition: 0.2s ease;
+    /*   bottom:; */
+    z-index: -1;
+    clip-path: polygon(0% 74%,
+            4% 75%,
+            8% 76%,
+            11% 77%,
+            15% 78%,
+            20% 78%,
+            25% 77%,
+            32% 77%,
+            37% 75%,
+            40% 74%,
+            43% 74%,
+            46% 73%,
+            52% 72%,
+            57% 72%,
+            65% 74%,
+            66% 75%,
+            71% 78%,
+            75% 82%,
+            81% 86%,
+            83% 88%,
+            88% 91%,
+            90% 94%,
+            94% 96%,
+            98% 98%,
+            100% 100%,
+            82% 100%,
+            0 100%);
+    background: #8792eb;
+}
+
+#submitAttendanceBtn:hover::after {
+    clip-path: polygon(0 30%,
+            9% 34%,
+            7% 39%,
+            11% 43%,
+            13% 33%,
+            17% 30%,
+            24% 34%,
+            25% 35%,
+            30% 31%,
+            30% 38%,
+            39% 33%,
+            35% 43%,
+            43% 45%,
+            55% 46%,
+            65% 74%,
+            67% 66%,
+            81% 57%,
+            75% 82%,
+            81% 86%,
+            83% 88%,
+            88% 91%,
+            90% 94%,
+            94% 96%,
+            98% 98%,
+            100% 100%,
+            82% 100%,
+            0 100%);
+    height: 80%;
+}
+
+#submitAttendanceBtn:hover::before {
+    clip-path: polygon(0 30%,
+            9% 34%,
+            7% 39%,
+            11% 43%,
+            13% 33%,
+            17% 30%,
+            24% 34%,
+            25% 35%,
+            30% 31%,
+            30% 38%,
+            39% 33%,
+            35% 43%,
+            43% 45%,
+            55% 46%,
+            65% 74%,
+            67% 66%,
+            81% 57%,
+            75% 82%,
+            81% 86%,
+            83% 88%,
+            88% 91%,
+            90% 94%,
+            94% 96%,
+            98% 98%,
+            100% 100%,
+            82% 100%,
+            0 100%);
+    height: 80%;
+}
+
+/* ***************************************************************Dropdown students************************************************** */
+
+#dropdown-btn {
+    background-color: #4caf4f;
+    color: rgb(255, 255, 255);
+    padding: 9px 15px;
+    /* border: none; */
+    margin-top: 4%;
+    margin-left: 5%;
+    cursor: pointer;
+    font-size: 17px;
+    border-radius: 15px;
+    transition: background-color 0.3s ease;
+}
+
+#dropdown-btn:hover {
+    background-color: #3bdf12;
+}
+
+.dropdown {
+    /* position: absolute;
+    top: 84px;
+    left: 47%; */
+    margin-left: 5%;
+
+    background-color: rgba(216, 248, 33, 0.747);
+    /* border: 3px solid #35bb23; */
+    width: 130px;
+    box-shadow: -4px -4px 6px rgb(81, 187, 49);
+    /* display: none; */
+
+    overflow-y: auto;
+    border-radius: 24px;
+    max-height: 200px;
+
+}
+
+.dropdown div {
+    padding: 6px;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.dropdown div:hover {
+    background-color: #a1eb80;
+}
+
+/* **************************************************Marksheet Form************************************************** */
+
+
+#student-marks-display {
+    margin-left: 6%;
+    margin-top: 10%;
+}
+
+#marksheet-table {
+    margin-left: 16%;
+    margin-top: -3%;
+}
+
+.inputData {
+    overflow: auto;
+}
+
+#save-btn {
+    margin-left: 82%;
+}
+
+.marks-table {
+    margin-left: 24%;
+    margin-top: 5%;
+}
+
+.saveMarks-btn {
+    background-color: #d8cb16d5;
+    /* Button background color */
+    color: #e9063fb2;
+    /* Text color */
+    float: left;
+    border: none;
+    padding: 7px 10px;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 30px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.saveMarks-btn::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300%;
+    height: 300%;
+    background-color: #e94560;
+    transition: all 0.3s ease;
+    border-radius: 50%;
+    z-index: -1;
+    transform: translate(-50%, -50%) scale(0);
+}
+
+.saveMarks-btn:hover::before {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0.9;
+}
+
+.saveMarks-btn:hover {
+    box-shadow: 0 15px 20px rgba(0, 0, 0, 0.4);
+    transform: translateY(-5px);
+    color: #1a1a2e;
+}
+
+/* Effect of waves under pressure */
+.saveMarks-btn:active::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    animation: ripple 0.6s ease-out;
+    z-index: -1;
+}
+
+@keyframes ripple {
+    to {
+        transform: translate(-50%, -50%) scale(4);
+        opacity: 0;
+    }
+}
+
+/* Animated text glow effect */
+.saveMarks-btn::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -75%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(120deg,
+            rgba(255, 255, 255, 0) 0%,
+            rgba(255, 255, 255, 0.8) 50%,
+            rgba(255, 255, 255, 0) 100%);
+    transform: skewX(-25deg);
+    transition: all 0.3s ease;
+}
+
+.saveMarks-btn:hover::after {
+    left: 100%;
+    transition: all 0.5s ease;
+}
+
+/* #updateMarkTable {
+    display: flex;
+} */
+
+@media screen and (max-width: 768px) {
+    #navbar {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #add_btn,
+    #attendance_btn,
+    #markSheet_btn,
+    #logout_btn {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+
+    #student-form {
+        width: 90%;
+        margin: 20px auto;
+    }
+
+    #header {
+        text-align: center;
+        margin: 10px auto;
+    }
+
+    #students-attendance,
+    #marksheet-table,
+    #table-container {
+        margin-left: auto;
+        margin-right: auto;
+        width: 95%;
+        overflow-x: auto;
+    }
+
+    #save-btn {
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+    }
+
+    .marks-table {
+        margin-left: auto;
+        margin-right: auto;
+        width: 95%;
+    }
+
+    #dropdown-btn {
+        margin: 10px auto;
+        display: block;
+    }
+
+    #dropdown {
+        margin: 10px auto;
+    }
+}
