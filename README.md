@@ -1,6 +1,9 @@
 # 🎓 Student Management System
 
 A full-stack web application for managing students, tracking attendance, storing marksheets, and handling user authentication.
+## 📽️ Project Demo :
+                 📹 Click the link below to see how the Student Management System works:
+                 👉 [Watch Demo Video on Google Drive](https://drive.google.com/file/d/1hO_SYdiFYFtvPNYNgaFFz6kOYMCgkmn3/view?usp=sharing)
 
 ---
 
